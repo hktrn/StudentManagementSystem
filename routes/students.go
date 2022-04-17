@@ -8,13 +8,6 @@ import (
 	"github.com/hktrn/StudentManagementSystem/model"
 )
 
-// Name
-// Phone Number
-// Address
-// Level : Member
-// Paid : Yes or No
-//
-
 type Student struct {
 	StudentID     uint32 `json:"student_id"`
 	Name          string `json:"name"`

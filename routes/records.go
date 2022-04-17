@@ -8,7 +8,6 @@ import (
 	"github.com/hktrn/StudentManagementSystem/model"
 )
 
-//Showing everything with 1 ID
 type Record struct {
 	StudentID uint32    `json:"student_id"`
 	Student   Student   `json:"student"`
@@ -21,6 +20,7 @@ func createRecord(record model.Record, student Student, placement Placement) Rec
 		Placement: placement}
 }
 
+// Adding record
 func AddRecord(c *fiber.Ctx) error {
 	var record model.Record
 
@@ -47,6 +47,7 @@ func AddRecord(c *fiber.Ctx) error {
 
 }
 
+// See all records
 func SeeRecords(c *fiber.Ctx) error {
 	records := []model.Record{}
 	database.Database.DB.Find(&records)
@@ -72,6 +73,7 @@ func findRecord(student_id int, record *model.Record) error {
 	return nil
 }
 
+// Finding specific record
 func SeeRecord(c *fiber.Ctx) error {
 	student_id, err := c.ParamsInt("student_id")
 	var record model.Record
@@ -95,6 +97,7 @@ func SeeRecord(c *fiber.Ctx) error {
 	return c.Status(200).JSON(responseRecord)
 }
 
+// Delete Record
 func DeleteRecord(c *fiber.Ctx) error {
 	student_id, err := c.ParamsInt("student_id")
 	var record model.Record

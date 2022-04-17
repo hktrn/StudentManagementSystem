@@ -23,7 +23,7 @@ func createPlacement(placement model.Placement) Placement {
 		Location: placement.Location,
 		Term:     placement.Term}
 }
-
+// Adding placements
 func AddPlacement(c *fiber.Ctx) error {
 	var placement model.Placement
 
@@ -37,7 +37,7 @@ func AddPlacement(c *fiber.Ctx) error {
 	return c.Status(200).JSON(responsePlacement)
 
 }
-
+//See all placements
 func SeePlacements(c *fiber.Ctx) error {
 	placements := []model.Placement{}
 
@@ -106,7 +106,7 @@ func UpdatePlacement(c *fiber.Ctx) error {
 	return c.Status(200).JSON(responsePlacement)
 }
 
-//Deleting
+//Deleting Placement
 func DeletePlacement(c *fiber.Ctx) error {
 	student_id, err := c.ParamsInt("student_id")
 	var placement model.Placement
