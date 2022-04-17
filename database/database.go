@@ -32,3 +32,4 @@ func ConnectToDatabase() {
 	Database = DBInstance{DB: db}
 
 }
+//done

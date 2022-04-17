@@ -28,3 +28,4 @@ type Record struct {
 	Student   Student   `gorm:"foreignKey:StudentID"`
 	Placement Placement `gorm:"foreignKey:StudentID"`
 }
+//done

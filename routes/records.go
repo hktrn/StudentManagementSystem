@@ -113,3 +113,4 @@ func DeleteRecord(c *fiber.Ctx) error {
 	}
 	return c.Status(200).JSON("Student deleted")
 }
+//done
