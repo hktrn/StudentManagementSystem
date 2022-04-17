@@ -95,9 +95,8 @@ func SeeRecord(c *fiber.Ctx) error {
 	return c.Status(200).JSON(responseRecord)
 }
 
-//need fixing
 func DeleteRecord(c *fiber.Ctx) error {
-	student_id, err := c.ParamsInt("student_int")
+	student_id, err := c.ParamsInt("student_id")
 	var record model.Record
 
 	if err != nil {
